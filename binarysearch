@@ -1,0 +1,29 @@
+vpublic class binSearchRecursion {
+    
+    public static void binSearch(int arr[], int first, int last, int key) {
+        int mid = (first + last)/2;
+        if (first > last) {
+            System.out.println("Element not found");
+        }
+        else {
+            if (arr[mid] == key){
+                System.out.println("Element found at: position " + mid);
+            }
+            else if (key < arr[mid]) {
+                binSearch(arr, first, mid-1, key);
+            }
+            else {
+                binSearch(arr, mid+1, last, key);
+            }
+        }
+    }
+
+    public static void main (String args[]) {
+        int arr[] = {10,20,30,40,50};
+        
+         
+        int key = 20; 
+        int last = arr.length - 1;
+        binSearch(arr,0,last,key);
+    }
+}
